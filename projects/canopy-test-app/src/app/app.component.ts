@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { tableTestData } from 'projects/canopy/src/lib/table/test.data';
@@ -24,6 +24,17 @@ export class AppComponent {
   form: FormGroup;
   selectedTabIndex = 0;
   tabs: Array<any>;
+  @ViewChild('carousel') carousel;
+
+  pauseCarousel() {
+    console.log(this.carousel);
+    this.carousel.pauseCarousel();
+  }
+
+  playCarousel() {
+    console.log(this.carousel);
+    this.carousel.playCarousel();
+  }
 
   toggleTableRow(index: number) {
     this.expandedTableRow = this.expandedTableRow === index ? null : index;

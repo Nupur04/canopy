@@ -95,5 +95,15 @@ export class LgCarouselComponent implements AfterContentInit, OnDestroy {
     this.unsubscribe.complete();
   }
 
+  pauseCarousel() {
+    console.log('pauseCarousel');
+    this.pause.next(true);
+  }
+
+  playCarousel() {
+    console.log('playCarousel');
+    this.pause.next(false);
+  }
+
   constructor(private cd: ChangeDetectorRef) {}
 }
