@@ -8,12 +8,16 @@ import { CanopyModule } from 'canopy';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TabStoryContentComponent } from './tab-story-content.component';
+import { LgCarouselFocusDirective } from './carousel-focus.directive';
+import { LgCarouselItemComponent } from 'projects/canopy/src/lib/carousel/carousel-item/carousel-item.component';
+import { LgCarouselComponent } from 'projects/canopy/src/lib/carousel/carousel.component';
 
 @NgModule({
-  declarations: [AppComponent, TabStoryContentComponent],
+  declarations: [AppComponent, TabStoryContentComponent, LgCarouselFocusDirective],
   imports: [AppRoutingModule, ReactiveFormsModule, BrowserModule, CanopyModule],
-  providers: [],
+  providers: [LgCarouselItemComponent, LgCarouselComponent],
   bootstrap: [AppComponent],
+  exports: [LgCarouselFocusDirective]
 })
 export class AppModule {
   constructor() {
